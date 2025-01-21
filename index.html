@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="./output.css" />
   </head>
   <body>
+    <div id="popUpForm" class="w-full justify-center items-center h-[100vh] absolute top-[50%] left-[50%] translate-x-[-50%] 
+    translate-y-[-50%] bg-[#0000007e] hidden">
+    <div class="w-[80%] h-[50%] flex flex-col justify-center p-5 
+    items-center z-10 bg-gray-200">
+      <form action="" id="FormTask">
+        <label for="Title" class="block">Task title</label>
+        <input id="Title" type="text" class="mb-2 border border-solid border-gray-600">
+        <label for="Description" class="block">Task description</label>
+        <input id="Description" type="text" class="mb-2 border border-solid border-gray-600"><br/>
+        <input type="time" class="mt-3 p-1">
+        <input type="submit" class="px-4 py-1 rounded text-white mt-3 bg-blue-700">
+      </form>
+    </div>
+  </div>
     <div class="h-[7vh] w-full bg-blue-950 text-center text-white">head</div>
     <div id="maincontainer" class="flex">
       <div
@@ -20,7 +34,7 @@
       </div>
       <div id="main" class="w-[75%] h-[93vh] p-4 grid grid-cols-[95 %] 
       grid-rows-5 gap-2  bg-gray-700">
-      <div class=" flex justify-center items-center border border-dashed">+ add New</div>
+      <div id="AddTask" class=" flex justify-center items-center border border-dashed cursor-pointer">+ add New plan</div>
     </div>
     </div>
   <script src="./App.js"></script>
