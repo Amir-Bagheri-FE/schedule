@@ -1,0 +1,19 @@
+.addedPlan{
+ background-color: blue;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ box-shadow: 0 0 4px rgb(158, 158, 158);
+ border-radius: 5px;
+ color: aliceblue;
+}
+.addedPlan > h3{
+    font-size: larger;
+    font-weight: bolder;
+    color: rgb(249, 255, 90);
+}
+.addedPlan > p{
+text-align: center;
+font-weight: 600;
+}
