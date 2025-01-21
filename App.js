@@ -10,6 +10,8 @@ AddBox.addEventListener("click", () => {
     }
   });
 });
+//for tracing the value 
+let gridCounter = 2;
 FormTask.addEventListener("submit", (e) => {
   e.preventDefault();
   popUpForm.style.display = "none";
@@ -26,6 +28,8 @@ FormTask.addEventListener("submit", (e) => {
   const newPlan = document.createElement('div')
   mainColumn.append(newPlan)
   newPlan.classList.add('addedPlan')
+  newPlan.style.gridRowStart=gridCounter
+  gridCounter++
   // buttons for boxes
    let iconsDiv=document.createElement('div')
    iconsDiv.classList.add('iconsDiv')
@@ -38,8 +42,25 @@ FormTask.addEventListener("submit", (e) => {
    page.classList.add('fas', 'fa-file-alt')
    up.classList.add('fas', 'fa-caret-up')
    down.classList.add('fas', 'fa-caret-down')
-
    iconsDiv.append(trash,page,up,down)
+   //adding functionality on icons
+   trash.addEventListener('click',(e)=>{
+    e.target.parentElement.parentElement.remove()
+   })
+   up.addEventListener('click',(e)=>{
+   let box= e.target.parentElement.parentElement
+   let currentRow=parseInt(getComputedStyle(box).getPropertyValue('grid-row-start'))
+   if (2<currentRow<=5){
+    box.style.gridRowStart=currentRow-1
+   }
+   })
+   down.addEventListener('click',(e)=>{
+    let box= e.target.parentElement.parentElement
+    let currentRow=parseInt(getComputedStyle(box).getPropertyValue('grid-row-start'))
+    if (2<=currentRow<5){
+     box.style.gridRowStart=currentRow+1
+    }
+    })
   //inserting info in boxes
   let Title=document.createElement('h3')
   newPlan.append(Title)
