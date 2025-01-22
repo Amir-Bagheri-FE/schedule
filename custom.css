@@ -33,6 +33,7 @@ color: aquamarine;
 }
 #listContainer > h3{
 width: 100%;
+font-size: large;
 margin: 4px;
 padding: 5px;
 background-color: azure;

@@ -88,14 +88,15 @@ function DisplayLastAdds(){
   let poUp=document.getElementById('popUpList')
   const listContainer=document.getElementById('listContainer')
   poUp.style.display='flex'
+  let Title= document.createElement('h3')
   for(let i=0; i<TitlesArray.length;i++){
-   let Title= document.createElement('h3')
     listContainer.append(Title)
     Title.textContent=TitlesArray[i]
   }
   poUp.addEventListener('click',(e)=>{
     if (e.target  ===poUp){
       poUp.style.display='none'
+      Title.remove()
     }
   })
 }
