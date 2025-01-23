@@ -21,6 +21,7 @@ font-weight: 600;
 width: 90%;
 display: flex;
 justify-content: space-evenly;
+align-items: center;
 padding: 5px 0;
 box-shadow:0 0 5px wheat ;
 border-radius:5px ;

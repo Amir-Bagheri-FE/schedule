@@ -2,17 +2,20 @@ const AddBox = document.getElementById("AddTask");
 const popUpForm = document.getElementById("popUpForm");
 const FormTask = document.querySelector("#FormTask");
 let mainColumn = document.getElementById("main");
-let TitlesArray =new Array(0)
+let TitlesArray =new Array(0) // for saving titles in list
 AddBox.addEventListener("click", () => {
   popUpForm.style.display = "flex";
+  let Tasktitle = document.getElementById("Title");
+  Tasktitle.focus()
   popUpForm.addEventListener("click", (e) => {
     if (e.target === popUpForm) {
       popUpForm.style.display = "none";
     }
   });
 });
-//for tracing the value
+//for tracing the value & place 
 let gridCounter = 2;
+ let PlanObject={Title:'',Description:'',Time:''} //object for sending info to single page
 FormTask.addEventListener("submit", (e) => {
   e.preventDefault();
   popUpForm.style.display = "none";
@@ -39,16 +42,22 @@ FormTask.addEventListener("submit", (e) => {
       const up = document.createElement("li");
       const down = document.createElement("li");
       const like = document.createElement("li");
+      const Link = document.createElement('a')
       trash.classList.add("fas", "fa-trash");
       page.classList.add("fas", "fa-file-alt");
       up.classList.add("fas", "fa-caret-up");
       down.classList.add("fas", "fa-caret-down");
       like.classList.add("fas", "fa-heart");
-      iconsDiv.append(trash, page, up,down, like);
+      iconsDiv.append(trash, Link, up,down, like);
+      Link.append(page)
+      Link.setAttribute('href','./PlanPage/TaskPage.html');
+      Link.setAttribute('target','blank');
       //adding functionality on icons
+      //deleting button
       trash.addEventListener("click", (e) => {
         e.target.parentElement.parentElement.remove();
       });
+      //up button
       up.addEventListener("click", (e) => {
         let box = e.target.parentElement.parentElement;
         let currentRow = parseInt(
@@ -58,6 +67,7 @@ FormTask.addEventListener("submit", (e) => {
           box.style.gridRowStart = currentRow - 1;
         }
       });
+      //down button
       down.addEventListener("click", (e) => {
         let box = e.target.parentElement.parentElement;
         let currentRow = parseInt(
@@ -67,6 +77,13 @@ FormTask.addEventListener("submit", (e) => {
           box.style.gridRowStart = currentRow + 1;
         }
       });
+      //page button
+      page.addEventListener('click',(e)=>{
+        PlanObject.Title=e.target.parentElement.parentElement.nextElementSibling.textContent;
+        PlanObject.Description=e.target.parentElement.parentElement.nextElementSibling.nextElementSibling.textContent;
+        PlanObject.Time=e.target.parentElement.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.textContent;
+        localStorage.setItem("plan",JSON.stringify(PlanObject));//saving plan details as string  
+      })
       //inserting info in boxes
       let Title = document.createElement("h3");
       newPlan.append(Title);
@@ -84,6 +101,7 @@ FormTask.addEventListener("submit", (e) => {
     alert("maximum number plans reached please remove one");
   }
 });
+// displaying last Titles
 function DisplayLastAdds(){
   let poUp=document.getElementById('popUpList')
   const listContainer=document.getElementById('listContainer')
