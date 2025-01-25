@@ -3,6 +3,7 @@ const popUpForm = document.getElementById("popUpForm");
 const FormTask = document.querySelector("#FormTask");
 let mainColumn = document.getElementById("main");
 let TitlesArray =new Array(0) // for saving titles in list
+let  LikedSet = new Set()
 AddBox.addEventListener("click", () => {
   popUpForm.style.display = "flex";
   let Tasktitle = document.getElementById("Title");
@@ -48,6 +49,7 @@ FormTask.addEventListener("submit", (e) => {
       up.classList.add("fas", "fa-caret-up");
       down.classList.add("fas", "fa-caret-down");
       like.classList.add("fas", "fa-heart");
+      const clicked=false // for switch Like button
       iconsDiv.append(trash, Link, up,down, like);
       Link.append(page)
       Link.setAttribute('href','./PlanPage/TaskPage.html');
@@ -77,6 +79,13 @@ FormTask.addEventListener("submit", (e) => {
           box.style.gridRowStart = currentRow + 1;
         }
       });
+      //Like button
+      like.addEventListener('click',function(e){
+        if(!clicked){
+         LikedSet.add(e.target.parentElement.nextElementSibling.textContent)
+        like.style.color='aquamarine'
+        } 
+      })
       //page button
       page.addEventListener('click',(e)=>{
         PlanObject.Title=e.target.parentElement.parentElement.nextElementSibling.textContent;
@@ -115,6 +124,24 @@ function DisplayLastAdds(){
     if (e.target  ===poUp){
       poUp.style.display='none'
       Title.remove()
+    }
+  })
+}
+// displaying liked titles
+function DisplayFav(){
+  let popUp=document.getElementById('favList')
+  const listContainer=document.getElementById('FavContainer')
+  popUp.style.display='flex'
+  let likeArray =Array.from(LikedSet);
+  for(let i=0; i< likeArray.length;i++){
+    let Title= document.createElement('h3')
+    listContainer.append(Title)
+    Title.textContent= likeArray[i]
+  }
+  popUp.addEventListener('click',(e)=>{
+    if (e.target  ===popUp){
+      popUp.style.display='none'
+      listContainer.innerHTML=''
     }
   })
 }

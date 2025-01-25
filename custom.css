@@ -32,7 +32,7 @@ cursor: pointer;
 font-size: 15px;
 color: aquamarine;
 }
-#listContainer > h3{
+#listContainer > h3 , #FavContainer >h3{
 width: 100%;
 font-size: large;
 margin: 4px;
