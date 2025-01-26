@@ -49,7 +49,7 @@ FormTask.addEventListener("submit", (e) => {
       up.classList.add("fas", "fa-caret-up");
       down.classList.add("fas", "fa-caret-down");
       like.classList.add("fas", "fa-heart");
-      const clicked=false // for switch Like button
+      let clicked=false // for switch Like button
       iconsDiv.append(trash, Link, up,down, like);
       Link.append(page)
       Link.setAttribute('href','./PlanPage/TaskPage.html');
@@ -84,7 +84,14 @@ FormTask.addEventListener("submit", (e) => {
         if(!clicked){
          LikedSet.add(e.target.parentElement.nextElementSibling.textContent)
         like.style.color='aquamarine'
+        clicked=true
+        console.log(clicked);
         } 
+        else{
+        like.style.color='rgb(186, 186, 186)'
+        clicked=false
+        LikedSet.delete(e.target.parentElement.nextElementSibling.textContent)
+        }
       })
       //page button
       page.addEventListener('click',(e)=>{
