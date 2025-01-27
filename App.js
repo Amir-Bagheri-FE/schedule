@@ -84,7 +84,7 @@ FormTask.addEventListener("submit", (e) => {
          LikedSet.add(e.target.parentElement.nextElementSibling.textContent)
         like.style.color='aquamarine'
         clicked=true
-        console.log(clicked);
+         
         } 
         else{
         like.style.color='rgb(186, 186, 186)'
@@ -112,9 +112,11 @@ FormTask.addEventListener("submit", (e) => {
      let Timer= new Date();
      let hours=Timer.getHours()
      let minutes=Timer.getMinutes()
+     let Day =Timer.getDate()
+     let month=Timer.getMonth()
      hours=hours < 10 ? '0'+hours : hours.toString();
      minutes=minutes < 10 ? '0'+minutes : minutes.toString();
-      time.textContent =`Added in: ${hours}:${minutes}`
+      time.textContent =`Added in: ${hours}:${minutes} - ${month+1}/${Day}th`
       // last added lists 
       TitlesArray.push(Tasktitle.value)
     }
