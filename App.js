@@ -15,13 +15,13 @@ AddBox.addEventListener("click", () => {
   });
 });
 //for tracing the value & place 
-let gridCounter = 2;
+let gridCounter = 1;
  let PlanObject={Title:'',Description:'',Time:''} //object for sending info to single page
 FormTask.addEventListener("submit", (e) => {
   e.preventDefault();
   popUpForm.style.display = "none";
   //form inputs
-  if (mainColumn.childElementCount <= 4) {
+  if (mainColumn.childElementCount <= 5) {
     let Tasktitle = document.getElementById("Title");
     let description = document.getElementById("Description");
     if (Tasktitle.value === "") {
@@ -64,7 +64,7 @@ FormTask.addEventListener("submit", (e) => {
         let currentRow = parseInt(
           getComputedStyle(box).getPropertyValue("grid-row-start")
         );
-        if (2 < currentRow && currentRow <= 5) {
+        if (2 <= currentRow && currentRow <= 5) {
           box.style.gridRowStart = currentRow - 1;
         }
       });
@@ -74,7 +74,7 @@ FormTask.addEventListener("submit", (e) => {
         let currentRow = parseInt(
           getComputedStyle(box).getPropertyValue("grid-row-start")
         );
-        if (2 <= currentRow && currentRow < 5) {
+        if (2 <= currentRow && currentRow <= 5) {
           box.style.gridRowStart = currentRow + 1;
         }
       });
