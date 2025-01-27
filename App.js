@@ -24,7 +24,6 @@ FormTask.addEventListener("submit", (e) => {
   if (mainColumn.childElementCount <= 4) {
     let Tasktitle = document.getElementById("Title");
     let description = document.getElementById("Description");
-    let timeout = document.getElementById("time");
     if (Tasktitle.value === "") {
       alert("please add a title");
     } else {
@@ -109,7 +108,13 @@ FormTask.addEventListener("submit", (e) => {
       describe.textContent = description.value;
       let time = document.createElement("p");
       newPlan.append(time);
-      time.textContent = timeout.value + "🕛";
+      // current time 
+     let Timer= new Date();
+     let hours=Timer.getHours()
+     let minutes=Timer.getMinutes()
+     hours=hours < 10 ? '0'+hours : hours.toString();
+     minutes=minutes < 10 ? '0'+minutes : minutes.toString();
+      time.textContent =`Added in: ${hours}:${minutes}`
       // last added lists 
       TitlesArray.push(Tasktitle.value)
     }
