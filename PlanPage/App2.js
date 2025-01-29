@@ -16,3 +16,16 @@ document.addEventListener('DOMContentLoaded',()=>{
       Time.style.fontWeight='bold'
       Time.style.color='white'
     })
+   let AddedFile = document.getElementById('file')
+    AddedFile.addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        console.log(file);
+          const reader = new FileReader();
+          reader.onload = function(e) {
+              const content = e.target.result;
+              document.getElementById('fileContent').innerText = content;
+          };
+          reader.readAsText(file); 
+      }
+  });
