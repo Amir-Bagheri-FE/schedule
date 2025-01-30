@@ -40,3 +40,8 @@ padding: 5px;
 background-color: azure;
 text-align: center;
 }
+.Timer{
+    color: aliceblue;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

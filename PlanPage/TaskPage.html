@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Planing page</title>
     <link rel="stylesheet" href="../output.css" />
+    <link rel="stylesheet" href="../custom.css" />
   </head>
   <body id="PlanPage">
     <div id="infoDiv" class="min-h-[15vh] text-black text-center bg-slate-500">
@@ -15,23 +16,27 @@
       <p id="PlanTime"></p>
     </div>
     <div
-      class="max-h-[65vh] max-w-full py-5 flex items-center flex-col bg-blue-500"
+      class="min-h-[55vh] max-w-full py-5 flex items-center flex-col bg-blue-500"
     >
-      <div class="m-5">
+      <div class="m-5 flex flex-col ">
         <h4 class="text-center font-bold mb-3">how much time you need to complete this plan?</h4>
         <label for="timeHours">Hours</label>
-        <input type="number" id="timeHours" min="0" max="99" placeholder="99"/>
+        <input type="number" id="timeHours" min="0" max="99" placeholder="99" 
+        class="rounded-lg p-1 bg-slate-400"/>
         <label for="timeMinutes">minutes</label>
-        <input type="number" id="timeMinutes" min="0" max="59" placeholder="45" />
+        <input type="number" id="timeMinutes" min="0" max="59" placeholder="45"
+        class="rounded-lg p-1 bg-slate-400" />
         <label for="timeSeconds">seconds</label>
-        <input type="number" id="timeSeconds" min="0" max="59" placeholder="30" />
+        <input type="number" id="timeSeconds" min="0" max="59" placeholder="30" 
+        class="rounded-lg p-1 bg-slate-400"/>
 
         <button onclick="displayTimer()"class="bg-black text-white px-4 py-1 m-2">
           set time
         </button>
       </div>
-      <h4>Add related files csv,txt supported</h4>
-      <input id="file" type="file" />
+      <h4 class="font-extrabold text-lg">Add related files ((only csv,txt supported))</h4>
+      <input id="file" type="file" 
+      class="rounded-lg p-1 bg-slate-400"/>
       <div
         id="fileContent"
         class="max-w-[90 %] h-40 m-5 flex justify-center bg-gray-600 overflow-auto resize font-extrabold"
