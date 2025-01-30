@@ -7,17 +7,36 @@
     <link rel="stylesheet" href="../output.css" />
   </head>
   <body id="PlanPage">
-     <div class="h-[15vh] text-black text-center bg-slate-500">
-      <h1 id="PlanTitle" class="text-lg text-blue-200 font-bold bg-blue-900">Error occurrd</h1>
+    <div id="infoDiv" class="min-h-[15vh] text-black text-center bg-slate-500">
+      <h1 id="PlanTitle" class="text-lg text-blue-200 font-bold bg-blue-900">
+        Error occurrd
+      </h1>
       <p id="PlanDescription" class="text-green-500 p-3 font-bold"></p>
       <p id="PlanTime"></p>
-     </div>
-      <div class="max-h-[65vh] max-w-full py-5 flex items-center flex-col bg-blue-500 ">
-        <h4>Add related files csv,txt supported</h4>
-          <input id="file" type="file">
-        <div id="fileContent" class="max-w-[90 %] h-40 m-5 flex justify-center bg-gray-600 overflow-auto resize font-extrabold">
-        </div>
+    </div>
+    <div
+      class="max-h-[65vh] max-w-full py-5 flex items-center flex-col bg-blue-500"
+    >
+      <div class="m-5">
+        <h4 class="text-center font-bold mb-3">how much time you need to complete this plan?</h4>
+        <label for="timeHours">Hours</label>
+        <input type="number" id="timeHours" min="0" max="99" placeholder="99"/>
+        <label for="timeMinutes">minutes</label>
+        <input type="number" id="timeMinutes" min="0" max="59" placeholder="45" />
+        <label for="timeSeconds">seconds</label>
+        <input type="number" id="timeSeconds" min="0" max="59" placeholder="30" />
+
+        <button onclick="displayTimer()"class="bg-black text-white px-4 py-1 m-2">
+          set time
+        </button>
       </div>
+      <h4>Add related files csv,txt supported</h4>
+      <input id="file" type="file" />
+      <div
+        id="fileContent"
+        class="max-w-[90 %] h-40 m-5 flex justify-center bg-gray-600 overflow-auto resize font-extrabold"
+      ></div>
+    </div>
     <script src="./App2.js"></script>
     <script></script>
   </body>
