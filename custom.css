@@ -45,3 +45,16 @@ text-align: center;
     font-weight: bolder;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+#PlanTitle{
+width: 20%;
+border-radius:9px;
+text-align: center;
+}
+#PlanTime{
+background-color:lightgray;
+font-weight: bold;
+color:rgb(121, 121, 121);
+padding: 5px;
+border-radius:9px;
+width:max-content;
+}

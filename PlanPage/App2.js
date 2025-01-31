@@ -8,9 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   title.textContent = "Plan Title:  " + PlanObject.Title;
   description.textContent = "description: " + PlanObject.Description;
   Time.textContent = PlanObject.Time;
-  Time.style.backgroundColor = "red";
-  Time.style.fontWeight = "bold";
-  Time.style.color = "white";
 });
 //Displaying text files in page
 let AddedFile = document.getElementById("file");
