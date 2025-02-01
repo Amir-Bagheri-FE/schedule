@@ -32,8 +32,6 @@
          bg-gray-600 text-white border border-solid border-blue-500">
         <i onclick="DisplayLastAdds()" class="my-3 py-[8px] px-[3px] rounded-md cursor-pointer bg-gray-500 hover:bg-gray-700">last titles added</i>
         <i class="my-3 py-[8px] px-[3px] rounded-md cursor-pointer bg-gray-500 hover:bg-gray-700" onclick="DisplayFav()">favorites</i>
-        <i class="my-3 py-[8px] px-[3px] rounded-md cursor-pointer bg-gray-500 hover:bg-gray-700">lists</i>
-        <i class="my-3 py-[8px] px-[3px] rounded-md cursor-pointer bg-gray-500 hover:bg-gray-700">new List</i>
       </div>
       <div id="main" class="w-[75%] h-[93vh] p-4 grid grid-cols-[95 %] 
       grid-rows-5 gap-2  bg-gray-700">
@@ -46,14 +44,12 @@
     <div id="listContainer" class="w-[80%] h-[50%] flex flex-col justify-center p-5 
     items-center z-10 bg-blue-400 rounded-xl"></div>
   </div>
-  
+        <!-- favorite list -->
   <div id="favList" class="w-full justify-center items-center h-[100vh] absolute top-[50%] left-[50%] translate-x-[-50%] 
   translate-y-[-50%] bg-[#0000007e] hidden">
   <div id="FavContainer" class="w-[80%] h-[50%] flex flex-col justify-center p-5 
   items-center z-10 bg-gray-500 rounded-xl"></div>
 </div>
-
-
   <script src="./App.js"></script>
   </body>
 </html>
