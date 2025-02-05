@@ -15,9 +15,8 @@ AddedFile.addEventListener("change", function (event) {
   const file = event.target.files[0];
   if (file) {
     const reader = new FileReader();
-    reader.onload = function (e) {
-      const content = e.target.result;
-      document.getElementById("fileContent").innerText = content;
+    reader.onload = function (e) { 
+      document.getElementById("fileContent").innerText = e.target.result;;
     };
     reader.readAsText(file);
   }
@@ -85,5 +84,5 @@ function displayTimer() {
         }
       }
     }
-  }, 30);
+  }, 1000);
 }
